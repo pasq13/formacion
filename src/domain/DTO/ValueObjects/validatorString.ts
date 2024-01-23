@@ -3,13 +3,13 @@ export abstract class ValidatorString {
     constructor(_regex: RegExp) {
         this._regex = _regex;
     }
-    protected checkString(word: string): boolean {
+    protected checkString?(word: string): boolean {
         if (word === '' || word == null) {
             throw new Error("string vacio");
         }
         return this._regex.test(word)
     }
-    protected compareString(word: string, property: string): boolean {
+    protected compareString?(word: string, property: string): boolean {
         if (word === '' || word == null) {
             throw new Error("string vacio");
         }

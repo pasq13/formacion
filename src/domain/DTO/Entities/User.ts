@@ -12,17 +12,19 @@ export class User extends ValidatorObject {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.id = id ?? this.generateId()
+        this.id = id
     }
-    public compareUserById(user: User): boolean {
+    public compareUserById?(user: User): boolean {
         if (user == null) {
             throw new Error("user null");
         }
         const id = 'id';
-        if (!this.compareProperty(user, id)) return false;
-        return this.compareObject(user);
+        if (!this.compareProperty?.(user, id)) {
+            throw new Error("Misma id");
+        };
+        return this.compareObject?.(user) ?? false;
     }
-    private generateId(): number {
+    private generateId?(): number {
         return (Math.random() * 100)
     }
 }
