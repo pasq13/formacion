@@ -1,7 +1,7 @@
 import { User } from "../domain/DTO/Entities/User";
 import { UserRepository } from "../infrastructure/userRepository";
 
-export class AddUserController {
+export class AddUser {
     constructor(private readonly repository: UserRepository) {
     }
     run(user: User): void {

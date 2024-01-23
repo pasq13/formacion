@@ -1,11 +1,10 @@
-import { AddUserController } from "../../aplication/addUserController";
-import { GetUserController } from "../../aplication/getUserController";
+import { AddUser } from "../../aplication/addUser";
 import { Email } from "../../domain/DTO/Entities/Email";
 import { Password } from "../../domain/DTO/Entities/Password";
 import { User } from "../../domain/DTO/Entities/User";
 import { UserRepository } from "../../infrastructure/userRepository";
 
-const controller = new AddUserController(new UserRepository())
+const controller = new AddUser(new UserRepository())
 test('same email', () => {
     const email1 = new Email(
         "pepe@gmail.com"
