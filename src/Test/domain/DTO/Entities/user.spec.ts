@@ -1,6 +1,6 @@
-import { Email } from "../domain/DTO/Entities/Email";
-import { Password } from "../domain/DTO/Entities/Password";
-import { User } from "../domain/DTO/Entities/User";
+import { Email } from "../../../../domain/DTO/Entities/Email";
+import { Password } from "../../../../domain/DTO/Entities/Password";
+import { User } from "../../../../domain/DTO/Entities/User";
 
 
 const email1 = new Email(
@@ -27,8 +27,8 @@ test('should user1 tobe user2', () => {
   expect(compareUser).toBe(true);
 });
 test('should user3 nottobe user1', () => {
- //const compareUser = ;
-  expect(() => { user1.compareUserById?.(user3) }).toThrow("Misma id")
+ const compareUser = () => { user1.compareUserById?.(user3) }
+  expect(compareUser).toThrow("Misma id")
 });
 test('should user4 nottobe user1 until same id', () => {
   const compareUser = user1.compareUserById?.(user4);
