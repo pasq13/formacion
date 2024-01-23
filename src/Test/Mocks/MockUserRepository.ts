@@ -1,6 +1,6 @@
-import { Email } from "../../domain/DTO/Entities/Email";
-import { Password } from "../../domain/DTO/Entities/Password";
-import { User } from "../../domain/DTO/Entities/User";
+import { Email } from "../../domain/ValueObjects/Email.valueObject";
+import { Password } from "../../domain/ValueObjects/Password.valueObject";
+import { User } from "../../domain/Entities/User.entity";
 export const user: User = {
     email: new Email(
         "pepe@gmail.com"
