@@ -1,6 +1,6 @@
-import { Email } from "../DTO/Entities/Email";
-import { Password } from "../DTO/Entities/Password";
-import { User } from "../DTO/Entities/User";
+import { Email } from "../domain/DTO/Entities/Email";
+import { Password } from "../domain/DTO/Entities/Password";
+import { User } from "../domain/DTO/Entities/User";
 
 
 const email1 = new Email(

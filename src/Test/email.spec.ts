@@ -1,4 +1,5 @@
-import { Email } from "../DTO/Entities/Email";
+import { Email } from "../domain/DTO/Entities/Email";
+
 const email1 = new Email(
     "pepe@gmail.com"
 )

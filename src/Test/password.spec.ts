@@ -1,4 +1,4 @@
-import { Password } from "../DTO/Entities/Password"
+import { Password } from "../domain/DTO/Entities/Password";
 
 const password1 = new Password("botellas1")
 const password2 = new Password("botellas1")
