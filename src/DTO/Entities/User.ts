@@ -15,11 +15,14 @@ export class User extends ValidatorObject {
         this.id = id ?? this.generateId()
     }
     public compareUserById(user: User): boolean {
+        if (user == null) {
+            throw new Error("user null");
+        }
         const id = 'id';
         if (!this.compareProperty(user, id)) return false;
         return this.compareObject(user);
     }
-    private generateId(){
+    private generateId(): number {
         return (Math.random() * 100)
     }
 }

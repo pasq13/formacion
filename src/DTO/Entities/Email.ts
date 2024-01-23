@@ -1,6 +1,6 @@
 import { ValidatorString } from "../ValueObjects/validatorString";
 
-const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,'g');
+const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, 'g');
 export class Email extends ValidatorString {
     email!: string;
     constructor(email: string) {
@@ -8,14 +8,14 @@ export class Email extends ValidatorString {
         this.email = email;
         //this._regex = regex;
     }
-    compareEmail(email: Email) {
-        if(email==null){
+    compareEmail(email: Email): boolean {
+        if (email == null) {
             throw new Error("email null");
         };
         const key = 'email'
         return this.compareString(email.email, key)
     }
-    checkEmail() {
+    checkEmail(): boolean {
         return this.checkString(this.email);
     }
 }
