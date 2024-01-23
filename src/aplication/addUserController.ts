@@ -2,17 +2,22 @@ import { User } from "../domain/DTO/Entities/User";
 import { UserRepository } from "../infrastructure/userRepository";
 
 export class AddUserController {
-    constructor(private readonly repository:  UserRepository){
+    constructor(private readonly repository: UserRepository) {
     }
-    addUser(user: User): void {
-        const users = this.repository.getAllUsers();
-        if (users.find(us => us.compareUserById?.(user))) {
-            throw new Error("La id no es un number");
-        };
-        if (users.find(us => us.email.compareEmail?.(user.email))) {
-            throw new Error("Email repetido");
-        };
-        user.id = user.id ?? this.repository.getLastId() + 1
-        this.repository.addUser(user);
+    run(user: User): void {
+        try {
+            const isRegisteredIDUser = this.repository.getUserById(user.id as number)
+            if (isRegisteredIDUser) {
+                throw new Error("Misma id");
+            };
+            const isRegisteredEmailUser = this.repository.getUserByEmail(user.email)
+            if (isRegisteredEmailUser) {
+                throw new Error("Email repetido");
+            };
+            user.id = user.id ?? this.repository.getLastId() + 1
+            this.repository.addUser(user);
+        } catch (error: any) {
+            throw new Error(error.toString())
+        }
     }
 }

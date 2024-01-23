@@ -1,7 +1,8 @@
 import { User } from "../domain/DTO/Entities/User";
 import { users } from "../Test/Mocks/MockUserRepository";
 import { Email } from "../domain/DTO/Entities/Email";
-import { IUserRepository } from "../domain/repository/IuserRepository";
+import { IUserRepository } from "../domain/repository/IUserRepository";
+
 
 export class UserRepository implements IUserRepository{
     getAllUsers() {

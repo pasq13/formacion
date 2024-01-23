@@ -8,15 +8,15 @@ export class Password extends ValidatorString {
         this.password = password;
         //this._regex = regex;
     }
-    public comparePassword?(password: Password): boolean {
+    public comparePassword?(password: Password): boolean | undefined{
         if (password == null) {
             throw new Error("password null");
         };
         const key = 'password'
-        return this.compareString?.(password.password, key) ?? false;
+        return this.compareString?.(password.password, key);
     }
-    public checkPassword?(): boolean {
-        return this.checkString?.(this.password) ?? false;
+    public checkPassword?(): boolean | undefined{
+        return this.checkString?.(this.password);
     }
 }
 

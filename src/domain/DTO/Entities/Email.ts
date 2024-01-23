@@ -8,14 +8,14 @@ export class Email extends ValidatorString {
         this.email = email;
         //this._regex = regex;
     }
-    compareEmail?(email: Email): boolean {
+    compareEmail?(email: Email): boolean | undefined {
         if (email == null) {
             throw new Error("email null");
         };
         const key = 'email'
-        return this.compareString?.(email.email, key) ?? false
+        return this.compareString?.(email.email, key)
     }
-    checkEmail?(): boolean {
-        return this.checkString?.(this.email) ?? false;
+    checkEmail?(): boolean | undefined {
+        return this.checkString?.(this.email);
     }
 }

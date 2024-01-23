@@ -12,7 +12,7 @@ test('same email', () => {
     )
     const password1 = new Password("botella1")
     const user = new User('pepe', email1, password1);
-    const addUser = () => { controller.addUser(user) };
+    const addUser = () => { controller.run(user) };
     expect(addUser).toThrow("Email repetido");
 })
 test('no id distinct id', () => {
@@ -21,7 +21,7 @@ test('no id distinct id', () => {
     )
     const password1 = new Password("botella1")
     const user = new User('pepe', email1, password1);
-    const addUser = () => { controller.addUser(user) };
+    const addUser = () => { controller.run(user) };
     expect(addUser).not.toThrow();
 })
 
@@ -31,6 +31,6 @@ test('same id 3', () => {
     )
     const password1 = new Password("botella1")
     const user = new User('pepe', email1, password1, 3);
-    const addUser = () => { controller.addUser(user) };
+    const addUser = () => { controller.run(user) };
     expect(addUser).toThrow("Misma id")
 })
