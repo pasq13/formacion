@@ -20,7 +20,7 @@ const email3 = new Email(
 )
 const password3 = new Password("botella1112")
 const user3 = new User('toni', email3, password3, 7)
-
+const user4 = new User('toni', email3, password3, 5);
 
 test('should user1 tobe user2', () => {
   const compareUser = user1.compareUserById(user2);
@@ -28,5 +28,9 @@ test('should user1 tobe user2', () => {
 });
 test('should user3 nottobe user1', () => {
   const compareUser = user1.compareUserById(user3);
+  expect(compareUser).toBe(false);
+});
+test('should user4 nottobe user1 until same id', () => {
+  const compareUser = user1.compareUserById(user4);
   expect(compareUser).toBe(false);
 });

@@ -9,6 +9,9 @@ export class Password extends ValidatorString {
         //this._regex = regex;
     }
     public comparePassword(password: Password) {
+        if(password==null){
+            throw new Error("password null");
+        };
         const key = 'password'
         return this.compareString(password.password, key)
     }

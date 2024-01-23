@@ -9,6 +9,9 @@ export class Email extends ValidatorString {
         //this._regex = regex;
     }
     compareEmail(email: Email) {
+        if(email==null){
+            throw new Error("email null");
+        };
         const key = 'email'
         return this.compareString(email.email, key)
     }
