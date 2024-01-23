@@ -1,5 +1,5 @@
 export abstract class ValidatorString {
-    protected _regex!: RegExp;
+    protected _regex: RegExp = new RegExp('');
     constructor(_regex: RegExp) {
         this._regex = _regex;
     }
