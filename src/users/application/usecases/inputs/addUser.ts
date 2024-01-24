@@ -3,10 +3,11 @@ import { UserInputRepository } from "../../repositories/implementations/userInpu
 import { UserOutputRepository } from "../../repositories/implementations/userOutputRepository";
 
 export class AddUser {
+  repository: UserInputRepository = new UserInputRepository();
+  getRepository: UserOutputRepository = new UserOutputRepository();
   constructor(
-    private readonly repository: UserInputRepository,
-    private readonly getRepository: UserOutputRepository
-  ) {}
+
+  ) { }
   run(user: User): void {
     try {
       const isRegisteredIDUser = this.getRepository.getUserById(user.id as number);

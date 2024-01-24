@@ -15,8 +15,14 @@
   },
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn ./src/index.ts",
+    "start": "ts-node ./src/view/index.ts"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/readline-sync": "^1.4.8"
+  }
 }

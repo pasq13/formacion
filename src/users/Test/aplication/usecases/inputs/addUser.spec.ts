@@ -2,13 +2,8 @@ import { AddUser } from "../../../../application/usecases/inputs/addUser";
 import { Email } from "../../../../domain/ValueObjects/Email.valueObject";
 import { Password } from "../../../../domain/ValueObjects/Password.valueObject";
 import { User } from "../../../../domain/Entities/User.entity";
-import { UserInputRepository } from "../../../../application/repositories/implementations/userInputRepository";
-import { UserOutputRepository } from "../../../../application/repositories/implementations/userOutputRepository";
 
-const controller = new AddUser(
-  new UserInputRepository(),
-  new UserOutputRepository()
-);
+const controller = new AddUser();
 test("same email", () => {
   const email1 = new Email("pepe@gmail.com");
   const password1 = new Password("botella1");
