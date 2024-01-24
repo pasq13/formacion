@@ -1,4 +1,4 @@
-import { ValidatorString } from "../../common/domain/valueObject/validatorString";
+import { ValidatorString } from "../../../common/domain/valueObject/validatorString";
 
 const regex = new RegExp(/^(?=.*\d).{8,}$/)
 export class Password extends ValidatorString {

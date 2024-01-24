@@ -1,4 +1,4 @@
-import { ValidatorString } from "../../common/domain/valueObject/validatorString";
+import { ValidatorString } from "../../../common/domain/valueObject/validatorString";
 
 const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "g");
 export class Email extends ValidatorString {

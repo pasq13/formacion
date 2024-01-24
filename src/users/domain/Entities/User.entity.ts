@@ -1,4 +1,4 @@
-import { ValidatorObject } from "../../common/domain/valueObject/validatorObject";
+import { ValidatorObject } from "../../../common/domain/valueObject/validatorObject";
 import { Email } from "../ValueObjects/Email.valueObject";
 import { Password } from "../ValueObjects/Password.valueObject";
 
