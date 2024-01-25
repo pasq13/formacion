@@ -8,7 +8,7 @@ export class AddUser {
   constructor(
 
   ) { }
-  run(user: User): void {
+  async run(user: User): Promise<void> {
     try {
       const isRegisteredIDUser = this.getRepository.getUserById(user.id as number);
       if (isRegisteredIDUser) {
@@ -18,8 +18,8 @@ export class AddUser {
       if (isRegisteredEmailUser) {
         throw new Error("Email repetido");
       }
-      user.id = user.id ?? this.getRepository.getLastId() + 1;
-      this.repository.addUser(user);
+      user.id = await user.id ?? await this.getRepository.getLastId() + 1;
+      await this.repository.addUser(user);
     } catch (error: any) {
       throw error;
     }

@@ -2,8 +2,8 @@ import { User } from "../../domain/Entities/User.entity";
 import { Email } from "../../domain/ValueObjects/Email.valueObject";
 
 export interface IUserOutputPort {
-    getAllUsers(): User[];
+    getAllUsers(): Promise<User[]>;
     getUserById(id: number): User | undefined;
-    getLastId(): number;
+    getLastId(): Promise<number>;
     getUserByEmail(email: Email): User | undefined;
 }

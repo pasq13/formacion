@@ -1,10 +1,14 @@
 
+import * as readline from "readline";
+import { stdin as input, stdout as output } from "process";
 import { UserView } from "./userview/userView";
 
+async function main() {
+    const rl = readline.createInterface({ input, output });
 
-export class view extends UserView {
+    const view = new UserView(rl);
 
+    view.show();
 }
-const vista = new view()
-const users = vista.show()
-console.log(users);
+
+main();

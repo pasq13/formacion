@@ -4,9 +4,9 @@ import { UserOutputRepository } from "../../repositories/implementations/userOut
 export class GetAllUsers {
   repository: UserOutputRepository = new UserOutputRepository();
   constructor() { }
-  run(): User[] {
+  async run(): Promise<User[]> {
     try {
-      return this.repository.getAllUsers();
+      return await this.repository.getAllUsers();
     } catch (error: any) {
       throw error;
     }
