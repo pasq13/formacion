@@ -1,6 +1,6 @@
 import { GetLastUserId } from "../../../../application/usecases/outputs/getLastUserId";
 import { users } from "../../../Mocks/MockUserRepository";
-import { UserOutputRepository } from "../../../../application/repositories/implementations/userOutputRepository";
+import { UserOutputRepository } from "../../../../application/repositories/outputs/userOutputRepository";
 
 const controller = new GetLastUserId(new UserOutputRepository())
 const usersMock = users

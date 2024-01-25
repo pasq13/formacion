@@ -1,6 +1,6 @@
 import { GetAllUsers } from "../../../../application/usecases/outputs/getAllUsers";
 import { user } from "../../../Mocks/MockUserRepository";
-import { UserOutputRepository } from "../../../../application/repositories/implementations/userOutputRepository";
+import { UserOutputRepository } from "../../../../application/repositories/outputs/userOutputRepository";
 
 const controller = new GetAllUsers(new UserOutputRepository())
 const usersMock = controller.run();

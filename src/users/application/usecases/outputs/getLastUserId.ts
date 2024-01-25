@@ -1,10 +1,11 @@
-import { UserOutputRepository } from "../../repositories/implementations/userOutputRepository";
+import { IUserOutputRepository } from "../../../domain/repositories/outputs/IUserOutputRepository";
+import { UserOutputRepository } from "../../repositories/outputs/userOutputRepository";
 
 export class GetLastUserId {
-  constructor(private readonly repository: UserOutputRepository) {}
-  run(): number {
+  constructor(private readonly repository: IUserOutputRepository) { }
+  async run(): Promise<number> {
     try {
-      return this.repository.getLastId();
+      return await this.repository.getLastId();
     } catch (error: any) {
       throw error;
     }

@@ -3,10 +3,13 @@ import { ValidatorString } from "../../../common/domain/valueObject/validatorStr
 const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "g");
 export class Email extends ValidatorString {
   email!: string;
-  constructor(email: string) {
+  private constructor(email: string) {
     super(regex);
     this.email = email;
     //this._regex = regex;
+  }
+  public static create(email:string){
+    
   }
   compareEmail?(email: Email): boolean | undefined {
     if (email == null) {

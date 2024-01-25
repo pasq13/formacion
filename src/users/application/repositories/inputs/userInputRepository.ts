@@ -1,6 +1,6 @@
 import { readerData, writeData } from "../../../../common/domain/repositories/repositoryConnection";
 import { User } from "../../../domain/Entities/User.entity";
-import { IUserInputRepository } from "../../../domain/repositories/interfaces/IUserInputRepository";
+import { IUserInputRepository } from "../../../domain/repositories/inputs/IUserInputRepository";
 import { users } from "../../../Test/Mocks/MockUserRepository";
 
 export class UserInputRepository implements IUserInputRepository {

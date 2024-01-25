@@ -1,7 +1,7 @@
 import {  } from "../../../../application/usecases/outputs/getAllUsers";
 import { GetUserByEmail } from "../../../../application/usecases/outputs/getUserByEmail";
 import { user } from "../../../Mocks/MockUserRepository";
-import { UserOutputRepository } from "../../../../application/repositories/implementations/userOutputRepository";
+import { UserOutputRepository } from "../../../../application/repositories/outputs/userOutputRepository";
 
 const controller = new GetUserByEmail(new UserOutputRepository())
 const userMock = user;

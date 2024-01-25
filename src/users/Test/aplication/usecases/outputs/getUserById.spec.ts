@@ -1,6 +1,6 @@
 import { GetUserById } from "../../../../application/usecases/outputs/getUserById";
 import { user } from "../../../Mocks/MockUserRepository";
-import { UserOutputRepository } from "../../../../application/repositories/implementations/userOutputRepository";
+import { UserOutputRepository } from "../../../../application/repositories/outputs/userOutputRepository";
 
 const controller = new GetUserById(new UserOutputRepository())
 const userMock = user;

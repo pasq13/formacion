@@ -1,15 +1,14 @@
-import { Email } from "../../../domain/ValueObjects/Email.valueObject";
 import { User } from "../../../domain/Entities/User.entity";
-import { UserOutputRepository } from "../../repositories/implementations/userOutputRepository";
+import { IUserOutputRepository } from "../../../domain/repositories/outputs/IUserOutputRepository";
 export class GetUserById {
-  constructor(private readonly repository: UserOutputRepository) {}
+  constructor(private readonly repository: IUserOutputRepository) { }
 
-  run(id: number): User | undefined {
+  async run(id: number): Promise<User> {
     try {
       if (isNaN(id)) {
         throw new Error("La id no es un number");
       }
-      return this.repository.getUserById(id);
+      return await this.repository.getUserById(id);
     } catch (error: any) {
       throw error;
     }

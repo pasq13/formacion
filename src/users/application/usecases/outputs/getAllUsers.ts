@@ -1,9 +1,8 @@
 import { User } from "../../../domain/Entities/User.entity";
-import { UserOutputRepository } from "../../repositories/implementations/userOutputRepository";
+import { IUserOutputRepository } from "../../../domain/repositories/outputs/IUserOutputRepository";
 
 export class GetAllUsers {
-  repository: UserOutputRepository = new UserOutputRepository();
-  constructor() { }
+  constructor(private readonly repository: IUserOutputRepository) { }
   async run(): Promise<User[]> {
     try {
       return await this.repository.getAllUsers();

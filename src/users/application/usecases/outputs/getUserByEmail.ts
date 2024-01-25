@@ -1,14 +1,14 @@
 import { Email } from "../../../domain/ValueObjects/Email.valueObject";
 import { User } from "../../../domain/Entities/User.entity";
-import { UserOutputRepository } from "../../repositories/implementations/userOutputRepository";
+import { IUserOutputRepository } from "../../../domain/repositories/outputs/IUserOutputRepository";
 export class GetUserByEmail {
-  constructor(private readonly repository: UserOutputRepository) {}
-  run(email: Email): User | undefined {
+  constructor(private readonly repository: IUserOutputRepository) {}
+  async run(email: Email): Promise<User> {
     try {
       if (!email.checkEmail?.()) {
-        throw new Error("La id no es un number");
+        throw new Error("email incorrecto");
       }
-      return this.repository.getUserByEmail(email);
+      return await this.repository.getUserByEmail(email);
     } catch (error: any) {
       throw error;
     }
