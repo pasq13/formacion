@@ -1,7 +1,7 @@
-import { readerData } from "../../../../common/repositories/repositoryConnection";
+import { readerData } from "../../../../common/domain/repositories/repositoryConnection";
 import { User } from "../../../domain/Entities/User.entity";
 import { Email } from "../../../domain/ValueObjects/Email.valueObject";
-import { IUserOutputRepository } from "../interfaces/IUserOutputRepository";
+import { IUserOutputRepository } from "../../../domain/repositories/interfaces/IUserOutputRepository";
 
 export class UserOutputRepository implements IUserOutputRepository {
     users: User[] = []

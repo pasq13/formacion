@@ -14,12 +14,16 @@ export function readerData(): Promise<any> {
     })
 }
 
-export function writeData(json: any) {
+export function writeData(json: any): Promise<null> {
     const fs = require('fs');
     const jsonstring = JSON.stringify(json);
-    fs.writeFile(path, jsonstring, 'utf8', (err: any, data: any) => {
-        if (err) {
-            console.log(err);
-        } 
-    });
+    return new Promise((resolve, reject) => {
+        fs.writeFile(path, jsonstring, 'utf8', (err: any, data: any) => {
+            if (err) {
+                console.log(err);
+                reject(err)
+            }
+            resolve(null);
+        });
+    })
 }
